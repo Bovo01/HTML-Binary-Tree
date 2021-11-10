@@ -1,0 +1,35 @@
+.tree {
+  margin: auto;
+  width: 90vw;
+  height: 90vh;
+
+  display: flex;
+}
+
+.tree-element {
+  flex: 1;
+}
+
+
+
+
+
+/*
+.animated {
+  position: absolute;
+  top: 50vh;
+  left: -100px;
+  text-align: center;
+  animation-name: prova;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes prova {
+  100% {
+    left: 50vw;
+    transform: rotate(360deg);
+  }
+}*/
