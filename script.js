@@ -1,3 +1,5 @@
+const TREE_CONTAINER = document.getElementById('tree');
+
 class Tree {
   constructor() {
     this.nodes = []
@@ -21,6 +23,33 @@ class Tree {
       i = parseInt(i / 2)
     }
   }
+
+  show() {
+    let row = undefined
+    let e = 0
+    for (let i = 0; i < this.nodes.length; i++) {
+      if ((i + 1) % Math.pow(2, e) == 0) {
+        // Creo la riga
+        row = document.createElement('div')
+        TREE_CONTAINER.appendChild(row)
+        e++
+      }
+      row.className = 'tree-row'
+      // Creo il nodo
+      let node = document.createElement('div')
+      node.innerHTML = this.nodes[i]
+      node.className = 'tree-node'
+      row.appendChild(node)
+    }
+    let i = this.nodes.length
+    while (i < Math.pow(2, e) - 1) {
+      let node = document.createElement('div')
+      node.className = 'tree-node'
+      node.style.visibility = 'hidden'
+      row.appendChild(node)
+      i++
+    }
+  }
 }
 
 let t = new Tree()
@@ -31,3 +60,4 @@ t.push(6)
 t.push(7)
 t.push(8)
 console.log(t)
+t.show()
