@@ -94,3 +94,5 @@ t.push(6)
 t.push(7)
 t.push(8)
 t.show()
+
+window.onresize = () => { t.show() }
