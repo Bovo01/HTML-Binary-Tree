@@ -15,10 +15,12 @@
 }
 
 .tree-node {
+  --w: calc(min(10vh, 10vw));
   border-radius: 100%;
   border: 1px solid black;
-  width: 10vw;
-  height: 10vw;
+  width: var(--w);
+  height: var(--w);
+  transition: transform 1s;
 }
 
 .tree-row + .tree-row {
@@ -31,10 +33,66 @@
   left: 0;
   width: 100vw;
   height: 100vh;
+  z-index: -1;
 }
 
 line {
   stroke: black;
+}
+
+.btn {
+  border-radius: 2px;
+  border: none;
+  box-shadow: 1px 1px 1px 1px grey;
+}
+
+.btn-success {
+  background-color: lime;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.apparizione {
+  --time: 1s;
+  --color: lime;
+  animation-name: appear;
+  animation-duration: var(--time);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    background-color: var(--color);
+  }
+}
+
+.traslazione {
+  --x1: 0;
+  --y1: 0;
+  --x2: 0;
+  --y2: 0;
+  --time: 1s;
+  --color: red;
+  background-color: var(--color);
+  position: absolute;
+  animation: trasla var(--time);
+}
+
+@keyframes trasla {
+  from {
+    left: var(--x1);
+    top: var(--y1);
+  }
+  to {
+    left: var(--x2);
+    top: var(--y2);
+  }
 }
 
 /*
