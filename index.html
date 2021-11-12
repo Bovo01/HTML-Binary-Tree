@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="styles.css" />
+    <script src="tree.js" defer></script>
     <script src="script.js" defer></script>
   </head>
 
@@ -9,8 +10,13 @@
     <div id="tree"></div>
     <svg id="tree-links"></svg>
     <div class="row">
-      <input id="to-push" placeholder="Push" value="20">
-      <button onclick="btnPush()" class="btn btn-success">Push</button>
+      <input
+        id="to-push"
+        placeholder="Inserisci un numero naturale"
+        type="number"
+        value=""
+      />
+      <button onclick="btnPush(this)" class="btn btn-success">Push</button>
     </div>
   </body>
 </html>

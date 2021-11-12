@@ -20,7 +20,6 @@
   border: 1px solid black;
   width: var(--w);
   height: var(--w);
-  transition: transform 1s;
 }
 
 .tree-row + .tree-row {
